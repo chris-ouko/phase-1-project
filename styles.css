@@ -1,0 +1,123 @@
+/* Reset some default browser styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a background color to the entire page */
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the header section */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Style the h1 in the header */
+header h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* Style the movie details section */
+.movie-details {
+    background-color: #fff;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the movie card */
+.movie-card {
+    display: flex;
+    align-items: center;
+}
+
+/* Style the movie poster */
+#movie-poster {
+    max-width: 200px;
+    margin-right: 20px;
+}
+
+/* Style the movie info */
+.movie-info {
+    flex: 1;
+}
+
+/* Style the movie title */
+#movie-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d9534f; /* Red color for movie titles */
+}
+
+/* Style other movie details */
+.movie-info p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Style the "Buy Ticket" button */
+#buy-ticket {
+    background-color: #5bc0de; /* Blue color for buttons */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Style the movie menu section */
+.movie-menu {
+    background-color: #fff;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the movie menu title */
+.movie-menu h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #5bc0de; /* Blue color for menu titles */
+}
+
+/* Style the movie list */
+ul#films {
+    list-style-type: none;
+}
+
+/* Style each movie item in the list */
+ul#films li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Style the footer section */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Add a watermark */
+.watermark {
+    position: fixed;
+    opacity: 0.25; /* 25% transparency */
+    font-size: 100px;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Ensure the watermark doesn't interfere with clicks */
+}

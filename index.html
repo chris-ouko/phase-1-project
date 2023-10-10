@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Cat Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Random Cat Generator</h1>
+        <p>Generate random cat images with customizations</p>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Cat Image Container -->
+        <div id="cat-image-container">
+            <!-- Cat Image Will Be Displayed Here -->
+        </div>
+
+        <!-- Cat Customization Options -->
+        <div id="cat-customization">
+            <h2>Customize Your Cat</h2>
+            <form id="cat-form">
+                <!-- Random Cat Button -->
+                <button type="button" id="random-cat-button">Get Random Cat</button>
+
+                <!-- Cat Tag Input -->
+                <label for="cat-tag">Cat Tag:</label>
+                <input type="text" id="cat-tag" name="cat-tag" placeholder="Enter Cat Tag">
+
+                <!-- Cat Text Input -->
+                <label for="cat-text">Cat Text:</label>
+                <input type="text" id="cat-text" name="cat-text" placeholder="Enter Cat Text">
+
+                <!-- Cat Size Input -->
+                <label for="cat-size">Cat Size:</label>
+                <select id="cat-size" name="cat-size">
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="square">Square</option>
+                    <option value="original">Original</option>
+                </select>
+
+                <!-- Cat Color Input -->
+                <label for="cat-color">Cat Color:</label>
+                <input type="color" id="cat-color" name="cat-color" value="#FF5733">
+
+                <!-- Cat Filter Input -->
+                <label for="cat-filter">Cat Filter:</label>
+                <select id="cat-filter" name="cat-filter">
+                    <option value="blur">Blur</option>
+                    <option value="mono">Monochrome</option>
+                    <option value="sepia">Sepia</option>
+                    <option value="negative">Negative</option>
+                    <option value="paint">Paint</option>
+                    <option value="pixel">Pixel</option>
+                </select>
+
+                <!-- Cat Width Input -->
+                <label for="cat-width">Cat Width:</label>
+                <input type="number" id="cat-width" name="cat-width" min="50" max="500" step="10" value="300">
+
+                <!-- Cat Height Input -->
+                <label for="cat-height">Cat Height:</label>
+                <input type="number" id="cat-height" name="cat-height" min="50" max="500" step="10" value="300">
+
+                <!-- Cat HTML Checkbox -->
+                <label for="cat-html">Cat HTML:</label>
+                <input type="checkbox" id="cat-html" name="cat-html" value="true">
+                
+                <!-- Cat JSON Checkbox -->
+                <label for="cat-json">Cat JSON:</label>
+                <input type="checkbox" id="cat-json" name="cat-json" value="true">
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2023 Random Cat Generator</p>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="index.js"></script>
+</body>
+</html>
