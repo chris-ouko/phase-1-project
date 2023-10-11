@@ -1,49 +1,92 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const catImage = document.getElementById("cat-image");
-    const searchButton = document.getElementById("search-button");
-    const catSearchForm = document.getElementById("cat-search-form");
+function fetchCatImage(criteria) {
+    // Base URL for the Cataas API.
+    const baseUrl = 'https://cataas.com';
 
-    // Function to load a random cat image based on search criteria
-    function searchCats() {
-        const catTag = document.getElementById("cat-tag").value;
-        const catText = document.getElementById("cat-text").value;
-        const catSize = document.getElementById("cat-size").value;
-        const catColor = document.getElementById("cat-color").value;
-        const catFilter = document.getElementById("cat-filter").value;
-        const catHeight = document.getElementById("cat-height").value;
+    let catImageUrl = baseUrl;
 
-        // Construct the API URL based on user input
-        let apiUrl = "https://cataas.com/cat";
-        if (catTag) {
-            apiUrl = apiUrl + "/" + catTag;
-        }
-        if (catText) {
-            apiUrl = apiUrl + "/says/" + catText;
-        }
-        if (catSize) {
-            apiUrl = apiUrl + "?type=" + catSize;
-        }
-        if (catColor) {
-            apiUrl = apiUrl + "?color=" + catColor;
-        }
-        if (catFilter) {
-            apiUrl = apiUrl + "?filter=" + catFilter;
-        }
-        if (catHeight) {
-            apiUrl = apiUrl + "?height=" + catHeight;
-        }
+    // Check if the "tag" criterion is selected.
+    if (criteria.tag) {
+        // Append the "tag" to the URL.
+        catImageUrl += `/cat/${criteria.tag}`;
 
-        // Make a GET request to retrieve the cat image
-        fetch(apiUrl)
-            .then((response) => response.text())
-            .then((data) => {
-                catImage.src = `https://cataas.com/cat?json=true${data}`;
-            })
-            .catch((error) => {
-                console.error("Error loading cat image:", error);
-            });
+        const criteria = {
+            tag: 'cute',   // Specify the tag you want to search for.
+            // Add other criteria if needed.
+        };
+        
+        fetchCatImage(criteria);
+        
     }
 
-    // Add an event listener to the search button
-    searchButton.addEventListener("click", searchCats);
-});
+    if (criteria.text) {
+        catImageUrl += `/says/${criteria.text}`;
+
+        const criteria = {
+            text: 'hello',   // Specify the tag you want to search for.
+            // Add other criteria if needed.
+        };
+        
+        fetchCatImage(criteria);
+        
+    }
+
+    if (criteria.size) {
+        catImageUrl += `?type=${criteria.size}`;
+
+        const criteria = {
+            size: 'small',   // Specify the tag you want to search for.
+            // Add other criteria if needed.
+        };
+        
+        fetchCatImage(criteria);
+        
+    }
+
+    if (criteria.color) {
+        catImageUrl += `?color=${criteria.color}`;
+
+        const criteria = {
+            color: 'red',   // Specify the tag you want to search for.
+            // Add other criteria if needed.
+        };
+        
+        fetchCatImage(criteria);
+        
+    }
+
+    if (criteria.filter) {
+        catImageUrl += `?filter=${criteria.filter}`;
+
+        const criteria = {
+            filter: 'sepia',   // Specify the tag you want to search for.
+            // Add other criteria if needed.
+        };
+        
+        fetchCatImage(criteria);
+        
+    }
+
+    if (criteria.height) {
+        catImageUrl += `?height=${criteria.height}`;
+
+        const criteria = {
+            height: '20',   // Specify the tag you want to search for.
+            // Add other criteria if needed.
+        };
+        
+        fetchCatImage(criteria);
+        
+    }
+
+    // Fetch the cat image based on the constructed URL.
+    fetch('https://cataas.com')
+        .then((response) => response.json())
+        .then((data) => {
+            // Displays the image on the webpage.
+            const catImage = document.getElementById('cat-image');
+            catImage.src = data.url;
+        })
+        .catch((error) => {
+            console.error('Error fetching cat image:', error);
+        });
+}
