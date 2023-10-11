@@ -1,11 +1,19 @@
-/* Add a fixed size for the cat images */
-#cat-image,
-#random-cat-section img {
-    width: 300px; /* Set your desired width */
-    height: auto; /* Maintain aspect ratio */
+/* Dark background and gold text color */
+body {
+    background-color: #222; /* Dark background color */
+    color: gold; /* Gold text color */
+    font-weight: bolder;
+    text-decoration: underline;
 }
 
-/* Additional styling for the random cat button */
+#cat-image,
+#random-cat-section img {
+    width: 300px; 
+    height: 300 px;
+    display: block; 
+    margin: 0 auto;
+}
+
 #random-cat-button {
     background-color: #007acc; /* Example background color */
     color: #fff; /* Text color */
