@@ -1,26 +1,31 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Function to fetch and display a cat image based on selected criteria.
+    // Function to fetch cat image based on criteria.
     function fetchCatImage(criteria) {
         // Base URL for the Cataas API.
         const baseUrl = 'https://cataas.com';
-
-        // Construct the URL based on selected criteria.
         let catImageUrl = baseUrl;
+
+        // Check if the "tag" criterion is selected.
         if (criteria.tag) {
             catImageUrl += `/cat/${criteria.tag}`;
         }
+
         if (criteria.text) {
             catImageUrl += `/says/${criteria.text}`;
         }
+
         if (criteria.size) {
             catImageUrl += `?type=${criteria.size}`;
         }
+
         if (criteria.color) {
             catImageUrl += `?color=${criteria.color}`;
         }
+
         if (criteria.filter) {
             catImageUrl += `?filter=${criteria.filter}`;
         }
+
         if (criteria.height) {
             catImageUrl += `?height=${criteria.height}`;
         }
@@ -29,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
         fetch(catImageUrl)
             .then((response) => response.json())
             .then((data) => {
-                // Display the image on the webpage.
+                // Displays the image on the webpage.
                 const catImage = document.getElementById('cat-image');
                 catImage.src = data.url;
             })
@@ -38,9 +43,32 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     }
 
+    // Function to fetch a random cat image.
+    function fetchRandomCatImage() {
+        // Base URL for a random cat image.
+        const randomCatUrl = 'https://cataas.com/cat';
+
+        // Fetch a random cat image.
+        fetch(randomCatUrl)
+            .then((response) => response.json())
+            .then((data) => {
+                // Display the random cat image on the webpage.
+                const catImage = document.getElementById('cat-image');
+                catImage.src = data.url;
+            })
+            .catch((error) => {
+                console.error('Error fetching random cat image:', error);
+            });
+    }
+
+    // Event listener for the "Random Cat" button.
+    const randomCatButton = document.getElementById('random-cat-button');
+    randomCatButton.addEventListener('click', fetchRandomCatImage);
+
     // Event listener for the search button.
     const searchButton = document.getElementById('search-button');
     searchButton.addEventListener('click', function () {
+        // Retrieve criteria from user inputs.
         const criteria = {
             tag: document.getElementById('cat-tag').value,
             text: document.getElementById('cat-text').value,
@@ -50,6 +78,9 @@ document.addEventListener("DOMContentLoaded", function () {
             height: document.getElementById('cat-height').value,
         };
 
+        // Fetch cat image based on criteria.
         fetchCatImage(criteria);
     });
+
+    // ... (other code)
 });
