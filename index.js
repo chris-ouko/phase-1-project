@@ -1,29 +1,49 @@
-document.addEventListener("DOMContentLoaded", () => {
-    fetch("https://cataas.com/cat?json=true")
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            let imageDiv = document.createElement("div")
-            imageDiv.className = "images"
-            imageDiv.innerHTML = `
-         <img src="https://cataas.com/${data.url}">
-        `
-            document.querySelector(".image1").appendChild(imageDiv)
-            document.querySelector("#random").addEventListener("click", () => {
-                changeButton();
+document.addEventListener("DOMContentLoaded", function () {
+    const catImage = document.getElementById("cat-image");
+    const searchButton = document.getElementById("search-button");
+    const catSearchForm = document.getElementById("cat-search-form");
+
+    // Function to load a random cat image based on search criteria
+    function searchCats() {
+        const catTag = document.getElementById("cat-tag").value;
+        const catText = document.getElementById("cat-text").value;
+        const catSize = document.getElementById("cat-size").value;
+        const catColor = document.getElementById("cat-color").value;
+        const catFilter = document.getElementById("cat-filter").value;
+        const catHeight = document.getElementById("cat-height").value;
+
+        // Construct the API URL based on user input
+        let apiUrl = "https://cataas.com/cat";
+        if (catTag) {
+            apiUrl = apiUrl + "/" + catTag;
+        }
+        if (catText) {
+            apiUrl = apiUrl + "/says/" + catText;
+        }
+        if (catSize) {
+            apiUrl = apiUrl + "?type=" + catSize;
+        }
+        if (catColor) {
+            apiUrl = apiUrl + "?color=" + catColor;
+        }
+        if (catFilter) {
+            apiUrl = apiUrl + "?filter=" + catFilter;
+        }
+        if (catHeight) {
+            apiUrl = apiUrl + "?height=" + catHeight;
+        }
+
+        // Make a GET request to retrieve the cat image
+        fetch(apiUrl)
+            .then((response) => response.text())
+            .then((data) => {
+                catImage.src = `https://cataas.com/cat?json=true${data}`;
             })
-        })
-    function changeButton() {
-        fetch("https://cataas.com/cat?json=true")
-            .then(res => res.json())
-            .then(element => {
-                document.querySelector(".image1").innerHTML = ``
-                let imageDiv2 = document.createElement("div")
-                imageDiv2.className = replacer
-                imageDiv2.innerHTML = `
-        <img src="https://cataas.com/${element.url}">
-        `
-                document.querySelector(".image1").appendChild(imageDiv2)
-        })
-    
-}});
+            .catch((error) => {
+                console.error("Error loading cat image:", error);
+            });
+    }
+
+    // Add an event listener to the search button
+    searchButton.addEventListener("click", searchCats);
+});
