@@ -16,34 +16,26 @@
         <h2>Random Cat Image</h2>
         <button id="random-cat-button">Random Cat</button>
         <img src="" alt="Image" id="cat-image">
-    
-<div class="image-container">
-    <img src="" alt="Image" id="cat-image">
-    
-      <!-- Inside your image-container div -->
-<div class="interactions">
-    <button class="like-button">Like</button>
-    <!-- Add the heart icon here -->
-    <span class="heart-icon">❤️</span>
-    <button class="comment-button">Comment</button>
-</div>
-  
-    </div>
-    <input type="text" class="comment-input" placeholder="Add a comment">
-    <button class="comment-submit-button">Submit</button>
-</div>
-
+        <div class="image-container">
+            <img src="" alt="Image" id="cat-image">
+            <div class="interactions">
+                <span class="heart-icon">❤️</span>
+                <input type="text" class="comment-input" placeholder="Add a comment">
+                <button class="comment-submit-button">Submit Comment</button>
+                <div class="comments"></div>
+            </div>
+        </div>
     </section>
     
-        <div id="search-section">
+    <div id="search-section">
         <h2>Search Cats</h2>
         <form id="cat-search-form">
             <label for="cat-tag">Cat Tag:</label>
             <input type="text" id="cat-tag" name="cat-tag" placeholder="Enter cat tag">
-
+            
             <label for="cat-text">Cat Text:</label>
             <input type="text" id="cat-text" name="cat-text" placeholder="Enter text">
-
+            
             <label for="cat-size">Cat Size:</label>
             <select id="cat-size" name="cat-size">
                 <option value="small">Small</option>
@@ -51,10 +43,10 @@
                 <option value="square">Square</option>
                 <option value="original">Original</option>
             </select>
-
+            
             <label for="cat-color">Cat Color:</label>
             <input type="text" id="cat-color" name="cat-color" placeholder="Enter color">
-
+            
             <label for="cat-filter">Filter:</label>
             <select id="cat-filter" name="cat-filter">
                 <option value="blur">Blur</option>
@@ -64,20 +56,16 @@
                 <option value="paint">Paint</option>
                 <option value="pixel">Pixel</option>
             </select>
-
+            
             <label for="cat-height">Height:</label>
             <input type="number" id="cat-height" name="cat-height" placeholder="Enter height">
-
+            
             <button type="button" id="search-button">Search</button>
         </form>
     </div>
 
-    
-
     <footer>
         <p>&copy; 2023 Cataas Cat Image Search</p>
     </footer>
-
-    
 </body>
 </html>

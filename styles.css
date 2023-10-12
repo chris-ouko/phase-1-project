@@ -84,6 +84,8 @@ label {
     cursor: pointer;
 }
 
+/* Your existing CSS styles... */
+
 /* Style the heart icon initially as gray */
 .heart-icon {
     color: gray;
@@ -92,7 +94,27 @@ label {
     transition: color 0.3s ease-in-out;
 }
 
-/* Style the heart icon as red when the like-button-liked class is added */
-.like-button-liked + .heart-icon {
+/* Style the heart icon as red when clicked */
+.heart-icon:hover {
     color: red;
+}
+
+/* Style the comment submission button */
+.comment-submit-button {
+    background-color: #007acc; /* Example background color */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* Remove the border */
+    cursor: pointer;
+}
+
+/* Style the comments container */
+.comments {
+    margin-top: 10px;
+}
+
+/* Optionally hide the original Like and Comment buttons */
+.like-button,
+.comment-button {
+    display: none;
 }
