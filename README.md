@@ -28,7 +28,7 @@ To run this SPA, all you need is a modern web browser. No additional installatio
 
 ## Usage
 
-1. When you first load the SPA, a random cat image is displayed on the main page.
+1. When you first load the SPA, the first button is the Random Cat button. Here you can click to load a random cat image before exploring the Search section.
 
 2. Use the search form in the "Search Cats" section to find cats based on your preferences:
    - **Cat Tag**: Enter a tag to filter cats.
@@ -41,6 +41,8 @@ To run this SPA, all you need is a modern web browser. No additional installatio
 3. Click the "Search" button to retrieve cat images that match your criteria.
 
 4. Enjoy adorable cat images with your selected preferences.
+
+5. Do not forget to like and comment on the cats you strike a connnection with! Use the like and comment buttons below the cat image once it loads.
 
 ## Customization
 
