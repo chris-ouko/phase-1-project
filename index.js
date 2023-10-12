@@ -60,16 +60,21 @@ function addSearchButtonListener() {
 
     // Simulated data to track likes and comments
     let liked = false;
-    const comments = [];
+    const comments = 0;
 
     // Toggle heart icon color
     heartIcon.addEventListener('click', () => {
         liked = !liked;
         if (liked) {
-            heartIcon.textContent = '❤️';
+            likeCount =+ 1;
+            heartIcon.textContent = '❤️' + likeCount;
             heartIcon.style.color = 'red';
         } else {
-            heartIcon.textContent = '🤍';
+            likeCount -= 1;
+            if (likeCount < 0) {
+                likeCount = 0
+            }
+            heartIcon.textContent = '🤍' + likeCount;
             heartIcon.style.color = 'gray';
         }
     });
@@ -90,7 +95,7 @@ function addSearchButtonListener() {
 
 // Function to fetch and display a random cat image
 function fetchRandomCatImage() {
-    const catImageUrl = 'https://cataas.com/cat';
+    const catImageUrl = 'https://cataas.com/cat?r=' + Math.random();
     const catImage = document.getElementById('cat-image');
             console.log (catImage)
             catImage.src = catImageUrl;

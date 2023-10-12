@@ -42,7 +42,7 @@ To run this SPA, all you need is a modern web browser. No additional installatio
 
 4. Enjoy adorable cat images with your selected preferences.
 
-5. Do not forget to like and comment on the cats you strike a connnection with! Use the like and comment buttons below the cat image once it loads.
+5. Do not forget to like and comment on the cats you strike a connnection with! Use the like and comment buttons below the cat image once it loads. The like button is a gray heart that turns red when clicked to notify you that you've liked the image.
 
 ## Customization
 
