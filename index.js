@@ -28,16 +28,24 @@ function fetchCatImage(criteria) {
         catImageUrl += `?height=${criteria.height}`;
     }
 
-    fetch(catImageUrl)
-        .then((response) => response.json())
-        .then((data) => {
-            const catImage = document.getElementById('cat-image');
-            catImage.src = data.url;
-        })
-        .catch((error) => {
-            console.error('Error fetching cat image:', error);
-        });
+    console.log (catImageUrl)
+          const catImage = document.getElementById('cat-image');
+            console.log (catImage)
+            catImage.src = catImageUrl;
+    // fetch(catImageUrl)
+    // .then (res=> res)
+    // .then (data => console.log (data.json()))
+        // .then((response) => response.json())
+        // .then((data) => {
+        //     console.log (data)
+        //     const catImage = document.getElementById('cat-image');
+        //     catImage.src = data.url;
+        // })
+        // .catch((error) => {
+        //     console.error('Error fetching cat image:', error);
+        // });
 }
+
 
 // Function to add an event listener to the "Search" button
 function addSearchButtonListener() {
@@ -50,7 +58,7 @@ function addSearchButtonListener() {
             color: document.getElementById('cat-color').value,
             filter: document.getElementById('cat-filter').value,
             height: document.getElementById('cat-height').value,
-        };
+        }; console.log (criteria)
         fetchCatImage(criteria);
     });
 }
@@ -58,19 +66,10 @@ function addSearchButtonListener() {
 // Function to fetch and display a random cat image
 function fetchRandomCatImage() {
     const catImageUrl = 'https://cataas.com/cat';
-    fetch(catImageUrl)
-        .then((response) => response.json())
-        .then((data) => {
-            const catImage = document.createElement('img');
-            catImage.src = data.url;
-            catImage.alt = 'Random Cat';
-            const catSection = document.getElementById('cat-section');
-            catSection.innerHTML = '';
-            catSection.appendChild(catImage);
-        })
-        .catch((error) => {
-            console.error('Error fetching random cat image:', error);
-        });
+    const catImage = document.getElementById('cat-image');
+            console.log (catImage)
+            catImage.src = catImageUrl;
+    
 }
 
 // Function to add an event listener to the "Random Cat" button
@@ -78,6 +77,7 @@ function addRandomCatButtonListener() {
     const randomCatButton = document.getElementById('random-cat-button');
     randomCatButton.addEventListener('click', fetchRandomCatImage);
 }
+
 
 // Call the functions to add the event listeners
 addSearchButtonListener();
