@@ -85,6 +85,16 @@ function addSearchButtonListener() {
     });
 }
 
+// Inside your JavaScript, add a class to the like button when it's clicked
+const likeButton = document.querySelector('.like-button');
+const heartIcon = document.querySelector('.heart-icon');
+
+likeButton.addEventListener('click', () => {
+    likeButton.classList.toggle('like-button-liked');
+    heartIcon.classList.toggle('like-button-liked');
+});
+
+
 // Function to fetch and display a random cat image
 function fetchRandomCatImage() {
     const catImageUrl = 'https://cataas.com/cat';
