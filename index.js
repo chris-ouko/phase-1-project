@@ -32,19 +32,7 @@ function fetchCatImage(criteria) {
           const catImage = document.getElementById('cat-image');
             console.log (catImage)
             catImage.src = catImageUrl;
-    // fetch(catImageUrl)
-    // .then (res=> res)
-    // .then (data => console.log (data.json()))
-        // .then((response) => response.json())
-        // .then((data) => {
-        //     console.log (data)
-        //     const catImage = document.getElementById('cat-image');
-        //     catImage.src = data.url;
-        // })
-        // .catch((error) => {
-        //     console.error('Error fetching cat image:', error);
-        // });
-}
+    }
 
 
 // Function to add an event listener to the "Search" button
