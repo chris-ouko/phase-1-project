@@ -61,18 +61,7 @@ label {
     margin-top: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
-
-#random-cat-section {
-    margin-top: 20px;
-}
-
-#random-cat-button {
-    background-color: #007acc; 
-    color: #fff; 
-    padding: 10px 20px; 
-    border: none; 
-    cursor: pointer;
+    opacity: 1;
 }
 
 .heart-icon {
@@ -102,3 +91,38 @@ label {
 .comment-button {
     display: none;
 }
+
+#search-section {
+    background-color: #f7f7f7;
+    padding: 20px;
+    margin-top: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-image: url('https://cataas.com/cat/gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.8;
+}
+
+#cat-tag, #cat-text, #cat-size, #cat-color, #cat-filter, #cat-height {
+    background: transparent; /* Set the background to transparent */
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#random-cat-section {
+    margin-top: 20px;
+}
+
+#random-cat-button {
+    background-color: #007acc;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
