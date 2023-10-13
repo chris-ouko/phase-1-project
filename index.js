@@ -52,7 +52,7 @@ function addSearchButtonListener() {
 }
 
 
-    // After you set the catImage.src, add an event listener for the heart icon and comment submission.
+    // Event listener for the heart icon and comment submission.
     const heartIcon = document.querySelector('.heart-icon');
     const commentInput = document.querySelector('.comment-input');
     const commentSubmitButton = document.querySelector('.comment-submit-button');
