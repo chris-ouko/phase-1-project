@@ -60,7 +60,7 @@ function addSearchButtonListener() {
 
     // Simulated data to track likes and comments
     let liked = false;
-    const comments = 0;
+    const comments = [];
 
     // Toggle heart icon color
     heartIcon.addEventListener('click', () => {
@@ -87,7 +87,7 @@ function addSearchButtonListener() {
         // Display all comments
         const commentsHtml = comments.map(comment => `<p>${comment}</p>`).join('');
         commentsContainer.innerHTML = commentsHtml;
-        commentInput.value = ''; // Clear the input field
+        commentInput.value = '';
     });
 
 
